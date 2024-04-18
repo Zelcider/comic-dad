@@ -1,40 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Comic</title>
-<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bande Dessinée</title>
+    <style>
+        /* Style général de la page */
+        body {
+            font-family: sans-serif;
+            margin: 0;
+        }
+
+        /* Conteneur principal */
+        .bd-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        /* Couverture pleine largeur */
+        .couverture {
+            width: 100%;
+            height: 500px;
+            background-image: url(test.png); /* Remplacer par l'URL de votre image */
+            background-size: cover;
+        }
+
+        /* Cases de la bande dessinée */
+        .case {
+            width: 49%; /* 50% divisé par 2 pour 2 cases par ligne */
+            height: 500px; /* Ajuster la hauteur selon vos besoins */
+            margin-bottom: 20px;
+            background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Trevor_under_moonlight.JPG/500px-Trevor_under_moonlight.JPG"); /* Remplacer par l'URL de votre image */
+            background-size: cover;
+        }
+
+        /* Ajuster le style pour les autres cases */
+        .case:nth-child(2n+1) {
+            background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Trevor_under_moonlight.JPG/500px-Trevor_under_moonlight.JPG"); /* Remplacer par l'URL de votre image */
+        }
+
+        .case:nth-child(3n+1) {
+            background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Trevor_under_moonlight.JPG/500px-Trevor_under_moonlight.JPG"); /* Remplacer par l'URL de votre image */
+        }
+
+        /* ... et ainsi de suite */
+
+        /* Style pour les bulles de texte (optionnel) */
+        .bulle {
+            position: relative;
+            display: inline-block;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            margin: 5px;
+        }
+
+        .bulle::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 10px;
+            border-style: solid;
+            border-color: transparent transparent #fff transparent;
+        }
+    </style>
 </head>
 <body>
-  <div class="comic-container">
-    <div class="comic-cover">
-      <img src="test.png" alt="Comic Cover">
-    </div>
-    <div class="comic-box">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Trevor_under_moonlight.JPG/500px-Trevor_under_moonlight.JPG" alt="Comic 1">
-    </div>
-    <div class="comic-box">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Trevor_under_moonlight.JPG/500px-Trevor_under_moonlight.JPG" alt="Comic 2">
-    </div>
-    <div class="comic-box">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Trevor_under_moonlight.JPG/500px-Trevor_under_moonlight.JPG" alt="Comic 3">
-    </div>
-    <div class="comic-box">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Trevor_under_moonlight.JPG/500px-Trevor_under_moonlight.JPG" alt="Comic 4">
-    </div>
-    <div class="comic-box">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Trevor_under_moonlight.JPG/500px-Trevor_under_moonlight.JPG" alt="Comic 5">
-    </div>
-    <div class="comic-box">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Trevor_under_moonlight.JPG/500px-Trevor_under_moonlight.JPG" alt="Comic 6">
-    </div>
-    <div class="comic-box">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Trevor_under_moonlight.JPG/500px-Trevor_under_moonlight.JPG" alt="Comic 7">
-    </div>
-    <div class="comic-box">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Trevor_under_moonlight.JPG/500px-Trevor_under_moonlight.JPG" alt="Comic 8">
-    </div>
-  </div>
+    <div class="bd-container">
+        <div class="couverture"></div>
+
+        <div class="case"></div>
+        <div class="case"></div>
+        <div class="case"></div>
+        <div class="case"></div>
+
+        </div>
 </body>
 </html>
