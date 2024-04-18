@@ -1,25 +1,44 @@
 body {
   background-color: #f0f0f0;
   font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .comic-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
   gap: 20px; /* Gap between grid items */
   justify-items: center; /* Center items horizontally */
+  padding: 20px;
 }
 
-.comic-box {
-  width: 100%; /* Occupy full width of its container */
-  max-width: 300px; /* Maximum width for each box */
-  border: 2px solid #000;
+.comic-cover {
+  width: 100%;
+  max-width: 500px; /* Maximum width for the cover */
+}
+
+.comic-cover img {
+  width: 100%;
+  display: block;
   border-radius: 10px;
-  overflow: hidden;
 }
 
 .comic-box img {
   width: 100%;
   height: auto; /* Maintain aspect ratio */
   display: block;
+  border-radius: 10px;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .comic-container {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust columns for smaller screens */
+    gap: 10px; /* Reduce gap for smaller screens */
+  }
+
+  .comic-cover {
+    max-width: 100%; /* Adjust cover width for smaller screens */
+  }
 }
